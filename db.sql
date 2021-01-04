@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: mysql
--- Generation Time: Jul 04, 2020 at 05:24 PM
--- Server version: 5.7.29
--- PHP Version: 7.4.3
+-- Хост: 127.0.0.1:3306
+-- Время создания: Янв 04 2021 г., 15:32
+-- Версия сервера: 8.0.15
+-- Версия PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,99 +19,83 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `task`
+-- База данных: `beejee`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tasks`
+-- Структура таблицы `tasks`
 --
 
 CREATE TABLE `tasks` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `task` text NOT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `status` int(11) DEFAULT '0'
+                         `id` int(11) NOT NULL,
+                         `username` varchar(255) NOT NULL,
+                         `task` text NOT NULL,
+                         `email` varchar(255) DEFAULT NULL,
+                         `status` int(11) DEFAULT '0',
+                         `editedbyadmin` int(2) DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tasks`
+-- Дамп данных таблицы `tasks`
 --
 
-INSERT INTO `tasks` (`id`, `username`, `task`, `email`, `status`) VALUES
-(3, 'Quia qui sint sed ut', 'sdfsdffsdfsdfsdfsdfsdfsdfsd', 'asda@dadas.dsfds', 1),
-(4, 'Voluptate enim labor', 'sssssssssssssssssssssss', 'sdsad@fsfdfs.fg', 0),
-(5, 'Nulla aut enim non l', 'Esse consequatur al', 'Ad nulla rerum paria', 0),
-(6, 'Nulla aut enim non l', 'Esse consequatur al', 'Ad nulla rerum paria', 0),
-(7, 'xezyku', 'zexyhagil', 'poti@mailinator.com', 0),
-(8, 'asdasdasd', 'saddsaddasdas', 'davron211@gmail.com', 0),
-(9, 'achilov21@yandex.com', 'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr', 'xaryfoguwi@mailinator.com', 0),
-(10, 'fsdfsdf', 'sdfsdfsdf', 'davron211@gmail.com', 0),
-(11, 'asdasdas', 'jewegacoc', 'davron211@gmail.com', 0),
-(12, 'fumul', '555555555555555555', 'nazyq@mailinator.com', 0),
-(13, 'xikavove', 'Qui delectus nobis ', 'najytevat@mailinator.com', 0),
-(14, 'cepotufud', 'Ut perferendis sed r', 'hutoc@mailinator.com', 0),
-(15, 'witik', 'Ut quaerat aut qui q', 'noxoxymailinator.com', 0),
-(16, 'dasdasd', 'asdasdasd', 'asdasdad', 0),
-(17, 'sdfsdfsdf', 'sdfsdfsdf', NULL, 0),
-(18, 'asdadasd', 'asdasdasdas', NULL, 0),
-(19, 'dffdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfd', '777777777777777777777777777777777777777', NULL, 0),
-(20, 'rrr', 'rrr', NULL, 0),
-(21, 'ASASs', 'SAASASAS', 'sASASA@df.ff', 0),
-(22, 'dasdasdasd', 'dfdfdfdf', 'asdasd@dsadsa.ff', 1);
+INSERT INTO `tasks` (`id`, `username`, `task`, `email`, `status`, `editedbyadmin`) VALUES
+(32, 'test2', 'test3', 'test2@test.com', 1, 1),
+(31, 'test1', 'test1', 'test1@test.com', 0, 1),
+(30, 'test', 'test job', 'test@test.com', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Структура таблицы `users`
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+                         `id` int(11) NOT NULL,
+                         `username` varchar(255) NOT NULL,
+                         `password` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (3, 'admin', '202cb962ac59075b964b07152d234b70');
 
 --
--- Indexes for dumped tables
+-- Индексы сохранённых таблиц
 --
 
 --
--- Indexes for table `tasks`
+-- Индексы таблицы `tasks`
 --
 ALTER TABLE `tasks`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Индексы таблицы `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT for table `tasks`
+-- AUTO_INCREMENT для таблицы `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
